@@ -14,6 +14,8 @@ public class LaserScript : MonoBehaviour
     [SerializeField]
     AudioClip audioClipLaserShot;
 
+    public ParticleSystem LaserHitExplosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +42,15 @@ public class LaserScript : MonoBehaviour
     {
         audSource.clip = soundClip;
         audSource.Play();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // TODO: Particle Effect Laser hit
+        Instantiate(LaserHitExplosion, transform.position, Quaternion.identity);
+        //LaserHitExplosion.Play();
+
+        // TODO: Add Hit Sound
+        Destroy(gameObject);
     }
 }
