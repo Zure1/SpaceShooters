@@ -4,36 +4,22 @@ using UnityEngine;
 
 public class MeteorScript : MonoBehaviour
 {
-    AudioSource audSource;
-    public AudioClip audioClipMeteorDestroyed;
+    public AudioClip AudioClipMeteorDestroyed;
     public ParticleSystem MeteorParticleExplosion;
+    public bool IsStartGame;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnDestroy()
     {
-        audSource = GetComponent<AudioSource>();
-    }
+        GameObject gameObj = new GameObject();
+        gameObj.AddComponent<GameObjectAutoDestroy>();
+        if (IsStartGame)
+        {
+            gameObj.AddComponent<StartGameOnDestroy>();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void PlaySound(AudioClip soundClip)
-    {
-        audSource.clip = soundClip;
-        audSource.Play();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        PlaySound(audioClipMeteorDestroyed);
+        var audioSource = gameObj.AddComponent<AudioSource>();
+        audioSource.clip = AudioClipMeteorDestroyed;
+        audioSource.Play();
         Instantiate(MeteorParticleExplosion, transform.position, Quaternion.identity);
-        var renderer = GetComponent<SpriteRenderer>(); // gets sprite renderer
-        renderer.enabled = false;
-        var poly = GetComponent<PolygonCollider2D>();
-        poly.enabled = false;
-        Destroy(gameObject, audioClipMeteorDestroyed.length);
     }
 }

@@ -46,11 +46,9 @@ public class LaserScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // TODO: Particle Effect Laser hit
         Instantiate(LaserHitExplosion, transform.position, Quaternion.identity);
-        //LaserHitExplosion.Play();
 
-        // TODO: Add Hit Sound
+        Destroy(collision.gameObject);
         Destroy(gameObject);
     }
 }
