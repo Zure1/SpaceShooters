@@ -485,11 +485,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2445606549894392724, guid: f493f1f564cff0642a5fa9c053f642f6,
+        type: 3}
+      propertyPath: m_Name
+      value: Meteor
+      objectReference: {fileID: 0}
     - target: {fileID: 3751453311321051106, guid: f493f1f564cff0642a5fa9c053f642f6,
         type: 3}
       propertyPath: audioClipMeteorDestroyed
       value: 
-      objectReference: {fileID: 8300000, guid: 5d047e2b1d4a55b41ba55bbfc2000f46, type: 3}
+      objectReference: {fileID: 8300000, guid: 88166612b0550a94bac7c98dd79277da, type: 3}
     - target: {fileID: 6089527568970332743, guid: f493f1f564cff0642a5fa9c053f642f6,
         type: 3}
       propertyPath: m_GravityScale
@@ -504,11 +509,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BodyType
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2445606549894392724, guid: f493f1f564cff0642a5fa9c053f642f6,
-        type: 3}
-      propertyPath: m_Name
-      value: Meteor
       objectReference: {fileID: 0}
     - target: {fileID: 2445606549894392726, guid: f493f1f564cff0642a5fa9c053f642f6,
         type: 3}
@@ -564,6 +564,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -9185324988166615911, guid: f493f1f564cff0642a5fa9c053f642f6,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f493f1f564cff0642a5fa9c053f642f6, type: 3}

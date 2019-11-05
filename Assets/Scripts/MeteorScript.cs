@@ -6,6 +6,7 @@ public class MeteorScript : MonoBehaviour
 {
     AudioSource audSource;
     public AudioClip audioClipMeteorDestroyed;
+    public ParticleSystem MeteorParticleExplosion;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class MeteorScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlaySound(audioClipMeteorDestroyed);
+        Instantiate(MeteorParticleExplosion, transform.position, Quaternion.identity);
         var renderer = GetComponent<SpriteRenderer>(); // gets sprite renderer
         renderer.enabled = false;
         var poly = GetComponent<PolygonCollider2D>();
