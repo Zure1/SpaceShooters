@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3751453311321051106}
   - component: {fileID: -2028234290646380466}
   - component: {fileID: -4236938159382955941}
+  - component: {fileID: 94090711338930405}
   m_Layer: 0
   m_Name: Meteor
   m_TagString: Untagged
@@ -121,6 +122,7 @@ MonoBehaviour:
     type: 3}
   MeteorParticleExplosion: {fileID: 1424662182610172966, guid: b1975922891d3264ab9d10e98c27b18f,
     type: 3}
+  IsStartGame: 0
 --- !u!82 &-2028234290646380466
 AudioSource:
   m_ObjectHideFlags: 0
@@ -255,3 +257,16 @@ PolygonCollider2D:
       - {x: 0.114999995, y: -0.32}
       - {x: 0.24499999, y: -0.37}
       - {x: 0.39499998, y: -0.32999998}
+--- !u!114 &94090711338930405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445606549894392724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d684ffbfbef3ce44a3bb22be285fb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 1

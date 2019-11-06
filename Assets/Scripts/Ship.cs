@@ -44,6 +44,11 @@ public class Ship : MonoBehaviour
 
     private void OnDestroy()
     {
+        var healthScript = GetComponent<HealthScript>();
+        if (healthScript?.CurrentHealth != 0)
+        {
+            return;
+        }
         GameObject gameObj = new GameObject();
         gameObj.AddComponent<GameObjectAutoDestroy>();
 

@@ -8,7 +8,8 @@ public class LaserScript : MonoBehaviour
     Vector3 laserDirection = Vector3.up;
     Vector3 movePosition;
     float laserHeight;
-    float laserSpeed = 0.10f;
+    float laserSpeed = 0.03f;
+    float damageAmount = 1f;
     AudioSource audSource;
 
     [SerializeField]
@@ -48,7 +49,11 @@ public class LaserScript : MonoBehaviour
     {
         Instantiate(LaserHitExplosion, transform.position, Quaternion.identity);
 
-        Destroy(collision.gameObject);
+        var healthScript = collision.gameObject.GetComponent<HealthScript>();
+        if (healthScript != null)
+        {
+            healthScript.TakenDamage(damageAmount);
+        }
         Destroy(gameObject);
     }
 }
