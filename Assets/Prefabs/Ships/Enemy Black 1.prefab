@@ -107,7 +107,7 @@ MonoBehaviour:
   IsMovingLeft: 1
   IsMovingDown: 0
   Target: {fileID: 0}
-  Laser1: {fileID: 2522005219924862229, guid: c345f1b954faf57418a5d41bc9c394bb, type: 3}
+  Laser1: {fileID: 1221900927575859655, guid: 36868f65fde638243bc6c37d9a73f3bd, type: 3}
 --- !u!114 &369195448830442276
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,6 +29,7 @@ public class LaserScript : MonoBehaviour
         else if (LaserDirection == Vector3.down)
         {
             movePosition = new Vector3(transform.position.x, -screenBounds.y - laserHeight);
+            transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
         }
     }
 

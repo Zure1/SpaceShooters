@@ -27,7 +27,7 @@ public class Boundaries : MonoBehaviour
 
         if (transform.position != viewPos)
         {
-            if (gameObject.tag == "Ship")
+            if (gameObject.tag == "HostileShip")
             {
                 var groupController = gameObject.transform.parent.gameObject.GetComponent<GroupController>();
                 //var groupController = gameObject.GetComponent<GroupController>();

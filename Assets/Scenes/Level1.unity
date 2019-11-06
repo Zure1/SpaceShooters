@@ -930,6 +930,7 @@ MonoBehaviour:
   IsMovingLeft: 1
   IsMovingDown: 0
   Target: {x: 0, y: 0, z: 0}
+  ListChildren: []
 --- !u!114 &434872280
 MonoBehaviour:
   m_ObjectHideFlags: 0

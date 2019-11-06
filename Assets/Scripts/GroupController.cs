@@ -7,11 +7,18 @@ public class GroupController : MonoBehaviour
     public float Speed;
     public bool IsMovingLeft = true, IsMovingDown;
     public Vector3 Target;
+    public List<GameObject> ListChildren = new List<GameObject>();
+
+    float timer = 0f;
+    float waitingTime = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = 0; i < transform.childCount; ++i)
+        {
+            ListChildren.Add(transform.GetChild(i).gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -33,6 +40,21 @@ public class GroupController : MonoBehaviour
         else
         {
             MoveRight();
+        }
+
+        // TODO: Random Shoot for one Gameobject in Group
+        timer += Time.deltaTime;
+        if (timer > waitingTime)
+        {
+            //Action
+            timer = 0;
+
+            var randomIndex = Random.Range(0, ListChildren.Count);
+            var enemyController = ListChildren[randomIndex].GetComponent<EnemyController>();
+            if (enemyController != null)
+            {
+                enemyController.Shoot();
+            }
         }
     }
 
