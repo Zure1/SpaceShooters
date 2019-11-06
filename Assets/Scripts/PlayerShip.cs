@@ -4,6 +4,8 @@ public class PlayerShip : Ship
 {
     float shipHeight;    
     public GameObject Laser1;
+    public float ShootingRate;
+    float shootCooldown;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +16,11 @@ public class PlayerShip : Ship
     // Update is called once per frame
     void Update()
     {
+        if (shootCooldown > 0)
+        {
+            shootCooldown -= Time.deltaTime;
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             MoveLeft();
@@ -34,11 +41,15 @@ public class PlayerShip : Ship
     /// </summary>
     public void Shoot()
     {
-        var laser = Instantiate(Laser1, new Vector3(transform.position.x, transform.position.y + shipHeight + Laser1.transform.GetComponent<SpriteRenderer>().bounds.extents.y + 0.1f), Quaternion.identity);
-        var laserScript = laser.GetComponent<LaserScript>();
-        if (laserScript != null)
-        {
-            laserScript.SetLaserDirection(ShootingDirection);
+        if (shootCooldown < Time.deltaTime)
+        {    
+            var laser = Instantiate(Laser1, new Vector3(transform.position.x, transform.position.y + shipHeight + Laser1.transform.GetComponent<SpriteRenderer>().bounds.extents.y + 0.1f), Quaternion.identity);
+            var laserScript = laser.GetComponent<LaserScript>();
+            if (laserScript != null)
+            {
+                laserScript.SetLaserDirection(ShootingDirection);
+            }
+            shootCooldown = ShootingRate;
         }
     }
 }

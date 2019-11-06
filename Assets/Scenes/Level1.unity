@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4c4a20a1971034bb7b2ea4a4f39c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.015
+  Speed: 0.01
   IsMovingLeft: 1
   IsMovingDown: 0
   Target: {x: 0, y: 0, z: 0}

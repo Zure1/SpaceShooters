@@ -45,10 +45,10 @@ public class Ship : MonoBehaviour
         audioSource.Play();
         Instantiate(ParticleSystemShipDestroyed, transform.position, Quaternion.identity);
 
-        //var parentGroupController = transform.parent.gameObject.GetComponent<GroupController>();
-        //if (parentGroupController != null)
-        //{
-        //    parentGroupController.ListChildren.Remove(gameObject);
-        //}
+        var parentGroupController = transform.parent.gameObject.GetComponent<GroupController>();
+        if (parentGroupController != null)
+        {
+            parentGroupController.ListChildren.Remove(gameObject);
+        }
     }
 }
