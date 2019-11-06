@@ -34,6 +34,11 @@ public class PlayerShip : Ship
     /// </summary>
     public void Shoot()
     {
-        Instantiate(Laser1, new Vector3(transform.position.x, transform.position.y + shipHeight + Laser1.transform.GetComponent<SpriteRenderer>().bounds.extents.y), Quaternion.identity);
+        var laser = Instantiate(Laser1, new Vector3(transform.position.x, transform.position.y + shipHeight + Laser1.transform.GetComponent<SpriteRenderer>().bounds.extents.y + 0.1f), Quaternion.identity);
+        var laserScript = laser.GetComponent<LaserScript>();
+        if (laserScript != null)
+        {
+            laserScript.SetLaserDirection(ShootingDirection);
+        }
     }
 }

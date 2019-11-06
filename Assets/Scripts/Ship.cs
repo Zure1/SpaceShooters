@@ -5,9 +5,9 @@ using UnityEngine;
 public class Ship : MonoBehaviour
 {
     public float Speed;
-    public int HP;
     public AudioClip AudioClipShipDestroyed;
     public ParticleSystem ParticleSystemShipDestroyed;
+    public Vector3 ShootingDirection;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,18 +28,6 @@ public class Ship : MonoBehaviour
     public void MoveRight()
     {
         transform.position = new Vector2(transform.position.x + Speed, transform.position.y);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Projectile")
-        {
-            HP--;
-            if (HP == 0)
-            {
-                Destroy(gameObject);
-            }
-        }
     }
 
     private void OnDestroy()

@@ -7,6 +7,7 @@ TagManager:
   - StartGame
   - Projectile
   - Ship
+  - HostileShip
   layers:
   - Default
   - TransparentFX

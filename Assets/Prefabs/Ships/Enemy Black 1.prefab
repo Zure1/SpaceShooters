@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6310305828586235221}
   m_Layer: 0
   m_Name: Enemy Black 1
-  m_TagString: Ship
+  m_TagString: HostileShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,15 +98,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.02
-  HP: 1
   AudioClipShipDestroyed: {fileID: 8300000, guid: 88166612b0550a94bac7c98dd79277da,
     type: 3}
   ParticleSystemShipDestroyed: {fileID: 1424662182610172966, guid: b1975922891d3264ab9d10e98c27b18f,
     type: 3}
+  ShootingDirection: {x: 0, y: -1, z: 0}
   IsPartOfGroup: 1
   IsMovingLeft: 1
   IsMovingDown: 0
   Target: {fileID: 0}
+  Laser1: {fileID: 2522005219924862229, guid: c345f1b954faf57418a5d41bc9c394bb, type: 3}
 --- !u!114 &369195448830442276
 MonoBehaviour:
   m_ObjectHideFlags: 0

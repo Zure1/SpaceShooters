@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5223222535640987935}
   - component: {fileID: -6492872650207420884}
   - component: {fileID: 1994889595105351723}
+  - component: {fileID: -7912279939155906182}
   m_Layer: 0
   m_Name: Player Ship
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,9 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.05
-  HP: 3
-  AudioClipShipDestroyed: {fileID: 0}
-  ParticleSystemShipDestroyed: {fileID: 0}
+  AudioClipShipDestroyed: {fileID: 8300000, guid: 88166612b0550a94bac7c98dd79277da,
+    type: 3}
+  ParticleSystemShipDestroyed: {fileID: 1424662182610172966, guid: b1975922891d3264ab9d10e98c27b18f,
+    type: 3}
+  ShootingDirection: {x: 0, y: 1, z: 0}
   Laser1: {fileID: 2522005219924862229, guid: c345f1b954faf57418a5d41bc9c394bb, type: 3}
 --- !u!114 &5223222535640987935
 MonoBehaviour:
@@ -168,3 +171,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 1
+  CurrentHealth: 0
+--- !u!50 &-7912279939155906182
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5223222535640987931}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
