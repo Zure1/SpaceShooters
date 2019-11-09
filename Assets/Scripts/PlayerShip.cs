@@ -30,7 +30,7 @@ public class PlayerShip : Ship
             MoveRight();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             Shoot();
         }

@@ -48,7 +48,7 @@ public class Ship : MonoBehaviour
         var parentGroupController = transform.parent.gameObject.GetComponent<GroupController>();
         if (parentGroupController != null)
         {
-            parentGroupController.ListChildren.Remove(gameObject);
+            parentGroupController.RemoveChildFromChildrenList(gameObject);
         }
     }
 }

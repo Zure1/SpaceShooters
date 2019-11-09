@@ -851,6 +851,7 @@ GameObject:
   - component: {fileID: 434872278}
   - component: {fileID: 434872279}
   - component: {fileID: 434872280}
+  - component: {fileID: 434872281}
   m_Layer: 0
   m_Name: EnemyGroup
   m_TagString: Ship
@@ -944,6 +945,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 566841909}
+--- !u!114 &434872281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434872277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96dd0c84e31f8ec44a90a861e7602ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &445043834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2557,7 +2570,7 @@ PrefabInstance:
     - target: {fileID: 5223222535640987931, guid: 829fafdcc75f9d7409d91e8c2e401427,
         type: 3}
       propertyPath: m_Name
-      value: Player Ship (1)
+      value: Player Ship
       objectReference: {fileID: 0}
     - target: {fileID: 5223222535640987929, guid: 829fafdcc75f9d7409d91e8c2e401427,
         type: 3}

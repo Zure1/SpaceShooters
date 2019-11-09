@@ -49,11 +49,14 @@ public class GroupController : MonoBehaviour
             //Action
             timer = 0;
 
-            var randomIndex = Random.Range(0, ListChildren.Count);
-            var enemyController = ListChildren[randomIndex].GetComponent<EnemyController>();
-            if (enemyController != null)
+            if (ListChildren?.Count > 0)
             {
-                enemyController.Shoot();
+                var randomIndex = Random.Range(0, ListChildren.Count);
+                var enemyController = ListChildren[randomIndex].GetComponent<EnemyController>();
+                if (enemyController != null)
+                {
+                    enemyController.Shoot();
+                }
             }
         }
     }
@@ -66,5 +69,18 @@ public class GroupController : MonoBehaviour
     void MoveRight()
     {
         transform.position = new Vector2(transform.position.x + Speed, transform.position.y);
+    }
+
+    /// <summary>
+    /// Removes one child from the ChildrenList of this GroupController.
+    /// </summary>
+    /// <param name="obj">The GameObject that will be removed from the ChildrenList.</param>
+    public void RemoveChildFromChildrenList(GameObject obj)
+    {
+        ListChildren.Remove(obj);
+        if (ListChildren?.Count == 0)
+        {
+            Destroy(gameObject, 1);
+        }
     }
 }
