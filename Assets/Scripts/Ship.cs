@@ -22,12 +22,12 @@ public class Ship : MonoBehaviour
 
     public void MoveLeft()
     {
-        transform.position = new Vector2(transform.position.x - Speed, transform.position.y);
+        transform.position = new Vector3(transform.position.x - Speed, transform.position.y, transform.position.z);
     }
 
     public void MoveRight()
     {
-        transform.position = new Vector2(transform.position.x + Speed, transform.position.y);
+        transform.position = new Vector3(transform.position.x + Speed, transform.position.y, transform.position.z);
     }
 
     private void OnDestroy()
