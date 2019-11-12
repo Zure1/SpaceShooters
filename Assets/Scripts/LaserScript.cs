@@ -48,12 +48,15 @@ public class LaserScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 newPos = Vector3.MoveTowards(transform.position, movePosition, laserSpeed);
-        transform.position = newPos;
-
-        if (transform.position == movePosition)
+        if (!PauseMenu.IsGamePaused)
         {
-            Destroy(gameObject);
+            Vector3 newPos = Vector3.MoveTowards(transform.position, movePosition, laserSpeed);
+            transform.position = newPos;
+
+            if (transform.position == movePosition)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

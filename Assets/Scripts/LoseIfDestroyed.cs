@@ -19,6 +19,13 @@ public class LoseIfDestroyed : MonoBehaviour
 
     private void OnDestroy()
     {
-        SceneManager.LoadScene("Lose");
+        var healthScript = gameObject.GetComponent<HealthScript>();
+        if (healthScript != null)
+        {
+            if (healthScript.CurrentHealth == 0)
+            {
+                SceneManager.LoadScene("Lose");
+            }
+        }
     }
 }

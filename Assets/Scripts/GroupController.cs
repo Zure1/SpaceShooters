@@ -24,38 +24,41 @@ public class GroupController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsMovingDown)
+        if (!PauseMenu.IsGamePaused)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Target, Speed);
-            if (transform.position == Target)
+            if (IsMovingDown)
             {
-                IsMovingDown = false;
-                IsMovingLeft = !IsMovingLeft;
-            }
-        }
-        else if (IsMovingLeft)
-        {
-            MoveLeft();
-        }
-        else
-        {
-            MoveRight();
-        }
-
-        // TODO: Random Shoot for one Gameobject in Group
-        timer += Time.deltaTime;
-        if (timer > waitingTime)
-        {
-            //Action
-            timer = 0;
-
-            if (ListChildren?.Count > 0)
-            {
-                var randomIndex = Random.Range(0, ListChildren.Count);
-                var enemyController = ListChildren[randomIndex].GetComponent<EnemyController>();
-                if (enemyController != null)
+                transform.position = Vector3.MoveTowards(transform.position, Target, Speed);
+                if (transform.position == Target)
                 {
-                    enemyController.Shoot();
+                    IsMovingDown = false;
+                    IsMovingLeft = !IsMovingLeft;
+                }
+            }
+            else if (IsMovingLeft)
+            {
+                MoveLeft();
+            }
+            else
+            {
+                MoveRight();
+            }
+
+            // TODO: Random Shoot for one Gameobject in Group
+            timer += Time.deltaTime;
+            if (timer > waitingTime)
+            {
+                //Action
+                timer = 0;
+
+                if (ListChildren?.Count > 0)
+                {
+                    var randomIndex = Random.Range(0, ListChildren.Count);
+                    var enemyController = ListChildren[randomIndex].GetComponent<EnemyController>();
+                    if (enemyController != null)
+                    {
+                        enemyController.Shoot();
+                    }
                 }
             }
         }

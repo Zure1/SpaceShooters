@@ -18,19 +18,22 @@ public class EnemyController : Ship
     // Update is called once per frame
     void Update()
     {
-        if (!IsPartOfGroup)
+        if (!PauseMenu.IsGamePaused)
         {
-            if (IsMovingDown)
+            if (!IsPartOfGroup)
             {
+                if (IsMovingDown)
+                {
 
-            }
-            else if (IsMovingLeft)
-            {
-                MoveLeft();
-            }
-            else
-            {
-                MoveRight();
+                }
+                else if (IsMovingLeft)
+                {
+                    MoveLeft();
+                }
+                else
+                {
+                    MoveRight();
+                }
             }
         }
     }

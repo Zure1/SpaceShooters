@@ -16,23 +16,26 @@ public class PlayerShip : Ship
     // Update is called once per frame
     void Update()
     {
-        if (shootCooldown > 0)
+        if (!PauseMenu.IsGamePaused)
         {
-            shootCooldown -= Time.deltaTime;
-        }
+            if (shootCooldown > 0)
+            {
+                shootCooldown -= Time.deltaTime;
+            }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            MoveLeft();
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            MoveRight();
-        }
+            if (Input.GetKey(KeyCode.A))
+            {
+                MoveLeft();
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                MoveRight();
+            }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Shoot();
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Shoot();
+            }
         }
     }
 
