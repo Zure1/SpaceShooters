@@ -1457,7 +1457,7 @@ GameObject:
   - component: {fileID: 1810117398}
   - component: {fileID: 1810117397}
   m_Layer: 0
-  m_Name: You Win!
+  m_Name: You Lose!
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
